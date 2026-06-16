@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sangita Raymajhi — Full Stack Development Portfolio</title>
+<meta name="description" content="CET138 Full Stack Development Assignment 1 ePortfolio by Sangita Raymajhi." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; padding-top: 56px; scroll-padding-top: 70px; }
+  html { scroll-behavior: smooth; }
+  .section-title { font-weight: 700; margin-bottom: 1.25rem; }
+  .navbar-brand { font-weight: 700; }
+
+  pre.code-block {
+    background: #f8f9fa; border: 1px solid #dee2e6; border-radius: .375rem;
+    padding: 1rem; font-size: .8rem; overflow-x: auto; line-height: 1.7;
+  }
+  .code-block .tag { color: #d63384; }
+  .code-block .attr { color: #0d6efd; }
+  .code-block .str { color: #198754; }
+  .code-block .kw { color: #6f42c1; }
+  .code-block .fn { color: #0d6efd; }
+
+  .html-frame { width: 100%; height: 300px; border: 1px solid #dee2e6; border-radius: .375rem; background: #fff; }
+
+  .flex-stage {
+    display: flex; gap: .75rem; align-items: center; min-height: 110px;
+    padding: 1rem; border: 1px dashed #adb5bd; border-radius: .375rem;
+    transition: flex-direction .3s ease, justify-content .3s ease;
+  }
+  .flex-box {
+    width: 56px; height: 56px; flex-shrink: 0; border-radius: .375rem;
+    display: flex; align-items: center; justify-content: center;
+    background: #0d6efd; color: #fff; font-weight: 700;
+  }
+
+  .todo-item.done span { text-decoration: line-through; color: #6c757d; }
+
+  footer a { color: #adb5bd; }
+</style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navMenu" data-bs-offset="80" tabindex="0">
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sangita Raymajhi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#foundations">Foundations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#html-section">HTML</a></li>
+        <li class="nav-item"><a class="nav-link" href="#css-section">CSS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bootstrap-section">Bootstrap</a></li>
+        <li class="nav-item"><a class="nav-link" href="#js-section">JavaScript</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="bg-primary text-white py-5">
+  <div class="container text-center py-3">
+    <h1 class="display-5 fw-bold mb-2">Sangita Raymajhi</h1>
+    <p class="lead mb-1">CET138 — Full Stack Development · Assignment 1</p>
+    <p class="mb-4 mx-auto" style="max-width: 640px;">
+      A short ePortfolio covering the foundations of full stack development,
+      with working examples of HTML, CSS, Bootstrap and JavaScript.
+    </p>
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+      <a href="#foundations" class="btn btn-light btn-sm">Foundations</a>
+      <a href="#html-section" class="btn btn-light btn-sm">HTML</a>
+      <a href="#css-section" class="btn btn-light btn-sm">CSS</a>
+      <a href="#bootstrap-section" class="btn btn-light btn-sm">Bootstrap</a>
+      <a href="#js-section" class="btn btn-light btn-sm">JavaScript</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== 1. FOUNDATIONS ===================== -->
+<section id="foundations" class="py-5">
+  <div class="container">
+    <h2 class="section-title">1. What is Full Stack Development?</h2>
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-6">
+        <p>
+          A website that does anything more than show fixed text is really two
+          products glued together: something that runs in the browser, and
+          something that runs on a server somewhere else. A full stack developer
+          is comfortable building and connecting both halves.
+        </p>
+        <p>
+          The <strong>front end</strong> (or "client side") is everything the
+          browser downloads and runs: HTML for structure, CSS for appearance and
+          JavaScript for behaviour — often combined with a framework like Bootstrap
+          to speed things up. The <strong>back end</strong> (or "server side") is
+          the part nobody sees: it receives requests, runs the application's logic,
+          checks who's allowed to do what, and reads from or writes to a database.
+        </p>
+        <p>
+          The panel opposite shows how the three layers talk to each other. Click
+          each one to see what it's responsible for and which tools are typically
+          used to build it.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <div class="list-group mb-3" id="layer-list">
+          <button type="button" class="list-group-item list-group-item-action active"
+            data-title="Client (the browser)"
+            data-desc="Everything the user sees and clicks. The browser downloads HTML, CSS and JavaScript and turns them into the page on screen. A framework like Bootstrap provides ready-made styles and components, so this layer doesn't have to be built from scratch."
+            data-tech="Typical tools: HTML · CSS · JavaScript · Bootstrap · React · Vue">
+            <strong>Client — Browser</strong><br>
+            <small class="text-muted">HTML · CSS · JS · Bootstrap</small>
+          </button>
+          <button type="button" class="list-group-item list-group-item-action"
+            data-title="Server (application logic)"
+            data-desc="Sits between the browser and the database. It receives requests — 'log this user in', 'save this order' — runs the business logic, checks permissions, and decides what response to send back."
+            data-tech="Typical tools: Node.js · PHP · Python (Django/Flask) · Java · .NET">
+            <strong>Server — Application</strong><br>
+            <small class="text-muted">Business logic</small>
+          </button>
+          <button type="button" class="list-group-item list-group-item-action"
+            data-title="Database (storage)"
+            data-desc="Stores the application's data permanently — user accounts, posts, orders, products — so it's still there next time anyone visits the site."
+            data-tech="Typical examples: MySQL · PostgreSQL · MongoDB · SQLite">
+            <strong>Database — Storage</strong><br>
+            <small class="text-muted">Persistent data</small>
+          </button>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title" id="layer-title">Client (the browser)</h5>
+            <p class="card-text" id="layer-desc">Everything the user sees and clicks. The browser downloads HTML, CSS and JavaScript and turns them into the page on screen. A framework like Bootstrap provides ready-made styles and components, so this layer doesn't have to be built from scratch.</p>
+            <p class="card-text mb-0"><small class="text-muted" id="layer-tech">Typical tools: HTML · CSS · JavaScript · Bootstrap · React · Vue</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. HTML ===================== -->
+<section id="html-section" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">2. HTML — Structure and Meaning</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <p>
+          HTML is the skeleton of a page — it groups content into meaningful
+          pieces and gives the browser (and anyone using a screen reader) clues
+          about what each piece is for.
+        </p>
+        <p>
+          Semantic elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>
+          and <code>&lt;footer&gt;</code> do the same visual job as a plain
+          <code>&lt;div&gt;</code>, but they also say <em>what</em> the content is.
+          That matters for accessibility, for search engines, and for anyone
+          reading the code later — including future me.
+        </p>
+        <h5 class="mt-4">What each tag means</h5>
+        <dl class="row small">
+          <dt class="col-sm-3"><code>&lt;header&gt;</code></dt>
+          <dd class="col-sm-9">Introductory content for the page or a section — often a logo, title and navigation.</dd>
+          <dt class="col-sm-3"><code>&lt;nav&gt;</code></dt>
+          <dd class="col-sm-9">A block of links used for navigating the site.</dd>
+          <dt class="col-sm-3"><code>&lt;main&gt;</code></dt>
+          <dd class="col-sm-9">The primary content of the page — there should only be one per page.</dd>
+          <dt class="col-sm-3"><code>&lt;article&gt;</code></dt>
+          <dd class="col-sm-9">A self-contained piece of content, such as a blog post.</dd>
+          <dt class="col-sm-3"><code>&lt;aside&gt;</code></dt>
+          <dd class="col-sm-9">Content related to, but separate from, the main content.</dd>
+          <dt class="col-sm-3"><code>&lt;footer&gt;</code></dt>
+          <dd class="col-sm-9">Closing content for the page or section — copyright, contact info, etc.</dd>
+        </dl>
+      </div>
+      <div class="col-lg-6">
+        <h6 class="text-uppercase text-muted small fw-bold">Markup</h6>
+        <pre class="code-block"><code>&lt;<span class="tag">header</span>&gt;
+  &lt;<span class="tag">h1</span>&gt;Daily Bytes&lt;/<span class="tag">h1</span>&gt;
+  &lt;<span class="tag">nav</span>&gt;
+    &lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="str">"#"</span>&gt;Home&lt;/<span class="tag">a</span>&gt;
+    &lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="str">"#"</span>&gt;Articles&lt;/<span class="tag">a</span>&gt;
+  &lt;/<span class="tag">nav</span>&gt;
+&lt;/<span class="tag">header</span>&gt;
+&lt;<span class="tag">main</span>&gt;
+  &lt;<span class="tag">article</span>&gt;
+    &lt;<span class="tag">h2</span>&gt;Why semantic HTML matters&lt;/<span class="tag">h2</span>&gt;
+    &lt;<span class="tag">p</span>&gt;Semantic tags describe what
+    content &lt;<span class="tag">em</span>&gt;is&lt;/<span class="tag">em</span>&gt;, not
+    just how it looks.&lt;/<span class="tag">p</span>&gt;
+  &lt;/<span class="tag">article</span>&gt;
+  &lt;<span class="tag">aside</span>&gt;
+    &lt;<span class="tag">h3</span>&gt;Related&lt;/<span class="tag">h3</span>&gt;
+  &lt;/<span class="tag">aside</span>&gt;
+&lt;/<span class="tag">main</span>&gt;
+&lt;<span class="tag">footer</span>&gt;
+  &lt;<span class="tag">p</span>&gt;&amp;copy; 2026 Daily Bytes&lt;/<span class="tag">p</span>&gt;
+&lt;/<span class="tag">footer</span>&gt;</code></pre>
+        <h6 class="text-uppercase text-muted small fw-bold mt-3">Live result (browser defaults, no CSS)</h6>
+        <iframe class="html-frame" id="html-demo-iframe" title="Live rendered semantic HTML example"></iframe>
+        <script type="text/plain" id="html-demo-src">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Daily Bytes&lt;/title&gt;
+&lt;style&gt;body{font-family:sans-serif;margin:1rem;color:#212529;}nav a{margin-right:1rem;}footer{margin-top:1.5rem;padding-top:.5rem;border-top:1px solid #ccc;font-size:.85rem;color:#666;}aside{background:#f8f9fa;padding:.6rem;border-radius:4px;margin-top:1rem;}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+  &lt;h1&gt;Daily Bytes&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;Articles&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Why semantic HTML matters&lt;/h2&gt;
+    &lt;p&gt;Semantic tags describe what content &lt;em&gt;is&lt;/em&gt;, not just how it looks. A screen reader can jump straight to "main" or "nav" because the browser knows what they mean.&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;aside&gt;
+    &lt;h3&gt;Related&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;HTML basics&lt;/li&gt;
+      &lt;li&gt;Accessibility tips&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2026 Daily Bytes&lt;/p&gt;
+&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. CSS ===================== -->
+<section id="css-section" class="py-5">
+  <div class="container">
+    <h2 class="section-title">3. CSS — Layout and Appearance</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <p>
+          CSS controls layout and appearance. Every element on a page is a box —
+          the box model (content, padding, border and margin) determines how big
+          that box is and how much space it takes up around itself.
+        </p>
+        <p>
+          <strong>Flexbox</strong> is one of the most useful layout tools: it lets
+          a container arrange its children in a row or column and decide how
+          they're spaced out, using just a couple of properties. The panel
+          opposite is a live example — change <code>flex-direction</code> and
+          <code>justify-content</code> with the buttons and watch the boxes (and
+          the CSS) update. The smooth movement is a CSS <em>transition</em>, not
+          JavaScript animation.
+        </p>
+        <h5 class="mt-4">Responsive design</h5>
+        <p>
+          This page itself uses Bootstrap's responsive grid and a couple of media
+          queries — try resizing the browser window (or viewing this on a phone)
+          and watch the navigation collapse into a menu and the two-column
+          sections stack into one column.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <h6 class="text-uppercase text-muted small fw-bold">Flexbox playground</h6>
+        <div class="mb-2 d-flex flex-wrap align-items-center gap-2">
+          <span class="small text-muted">flex-direction:</span>
+          <div class="btn-group btn-group-sm" role="group" id="direction-group">
+            <button type="button" class="btn btn-outline-primary active" data-prop="direction" data-value="row">row</button>
+            <button type="button" class="btn btn-outline-primary" data-prop="direction" data-value="column">column</button>
+            <button type="button" class="btn btn-outline-primary" data-prop="direction" data-value="row-reverse">row-reverse</button>
+          </div>
+        </div>
+        <div class="mb-3 d-flex flex-wrap align-items-center gap-2">
+          <span class="small text-muted">justify-content:</span>
+          <div class="btn-group btn-group-sm" role="group" id="justify-group">
+            <button type="button" class="btn btn-outline-primary active" data-prop="justify" data-value="flex-start">flex-start</button>
+            <button type="button" class="btn btn-outline-primary" data-prop="justify" data-value="center">center</button>
+            <button type="button" class="btn btn-outline-primary" data-prop="justify" data-value="space-between">space-between</button>
+            <button type="button" class="btn btn-outline-primary" data-prop="justify" data-value="space-around">space-around</button>
+          </div>
+        </div>
+        <div class="flex-stage mb-3" id="flex-stage">
+          <div class="flex-box">1</div>
+          <div class="flex-box">2</div>
+          <div class="flex-box">3</div>
+          <div class="flex-box">4</div>
+        </div>
+        <pre class="code-block"><code>.stage {
+  display: flex;
+  flex-direction: <span class="str" id="code-direction">row</span>;
+  justify-content: <span class="str" id="code-justify">flex-start</span>;
+}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. BOOTSTRAP ===================== -->
+<section id="bootstrap-section" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">4. Bootstrap — A Framework of Ready-Made Parts</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <p>
+          Bootstrap is a CSS (and JavaScript) framework: a library of ready-made
+          styles, layout tools and components, so common interface patterns don't
+          need to be built from zero.
+        </p>
+        <p>
+          Its grid system splits each row into 12 columns. A class like
+          <code>col-md-4</code> means "take up 4 of those 12 columns — one third
+          of the row — on medium screens and larger, but go full width below
+          that." Combined with components like cards and accordions, a responsive
+          layout can come together very quickly.
+        </p>
+        <p>
+          In fact, this whole page is built with Bootstrap: the navigation bar at
+          the top, the responsive grid behind every two-column section, the
+          buttons in the CSS playground, and the cards and accordion opposite all
+          come from Bootstrap's classes — none of it is custom-built.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <h6 class="text-uppercase text-muted small fw-bold">Live example — grid, cards and accordion</h6>
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">HTML</h6>
+                <p class="card-text small">Structure and content.</p>
+                <span class="badge bg-primary">col-md-4</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">CSS</h6>
+                <p class="card-text small">Layout and style.</p>
+                <span class="badge bg-success">col-md-4</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">JavaScript</h6>
+                <p class="card-text small">Behaviour and interaction.</p>
+                <span class="badge bg-warning text-dark">col-md-4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="bsAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGrid">
+                What is the Bootstrap grid?
+              </button>
+            </h2>
+            <div id="collapseGrid" class="accordion-collapse collapse show" data-bs-parent="#bsAccordion">
+              <div class="accordion-body">
+                The grid splits each row into 12 columns. <code>col-md-4</code> means "take 4 of 12 columns (one third) on medium screens and up — full width below that."
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWhy">
+                Why use a framework at all?
+              </button>
+            </h2>
+            <div id="collapseWhy" class="accordion-collapse collapse" data-bs-parent="#bsAccordion">
+              <div class="accordion-body">
+                Cards, badges, buttons and this accordion all come pre-styled and pre-wired, so the focus stays on content and layout rather than rebuilding common patterns from scratch.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. JAVASCRIPT ===================== -->
+<section id="js-section" class="py-5">
+  <div class="container">
+    <h2 class="section-title">5. JavaScript — Behaviour and Interaction</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <p>
+          JavaScript is what makes a page interactive after it's loaded: it
+          listens for <strong>events</strong> — clicks, typing, submitting a form
+          — and updates the page in response, without needing to reload.
+        </p>
+        <p>
+          The to-do list opposite is a small example of DOM manipulation. Typing a
+          task and clicking "Add" creates a new list item with
+          <code>document.createElement</code>, clicking the text toggles a "done"
+          style with <code>classList.toggle</code>, and the × button removes the
+          item with <code>remove()</code>. The snippet below shows the core of how
+          it works.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <form class="d-flex gap-2 mb-3" id="todo-form">
+          <label for="todo-input" class="visually-hidden">New task</label>
+          <input type="text" id="todo-input" class="form-control" placeholder="Add a task…" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        <ul class="list-group mb-3" id="todo-list">
+          <li class="list-group-item d-flex justify-content-between align-items-center todo-item">
+            <span>Finish CSS section</span>
+            <button type="button" class="btn btn-sm btn-link text-danger todo-remove" aria-label="Remove task">&times;</button>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center todo-item done">
+            <span>Write HTML glossary</span>
+            <button type="button" class="btn btn-sm btn-link text-danger todo-remove" aria-label="Remove task">&times;</button>
+          </li>
+        </ul>
+        <h6 class="text-uppercase text-muted small fw-bold">Core script</h6>
+        <pre class="code-block"><code>form.<span class="fn">addEventListener</span>(<span class="str">'submit'</span>, (event) =&gt; {
+  event.<span class="fn">preventDefault</span>();
+  <span class="kw">const</span> li = <span class="fn">document.createElement</span>(<span class="str">'li'</span>);
+  <span class="kw">const</span> span = <span class="fn">document.createElement</span>(<span class="str">'span'</span>);
+  span.textContent = input.value;
+  li.<span class="fn">appendChild</span>(span);
+  list.<span class="fn">appendChild</span>(li);
+  input.value = <span class="str">''</span>;
+});
+
+list.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, (event) =&gt; {
+  <span class="kw">if</span> (event.target.tagName === <span class="str">'SPAN'</span>) {
+    event.target.parentElement.classList.<span class="fn">toggle</span>(<span class="str">'done'</span>);
+  }
+  <span class="kw">if</span> (event.target.classList.contains(<span class="str">'todo-remove'</span>)) {
+    event.target.closest(<span class="str">'.todo-item'</span>).<span class="fn">remove</span>();
+  }
+});</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-dark text-light py-4 text-center small">
+  <div class="container">
+    <p class="mb-1"><strong class="text-white">Sangita Raymajhi</strong> · CET138 Full Stack Development — Assignment 1</p>
+    <p class="mb-0 text-muted">Built with HTML, Bootstrap 5 and vanilla JavaScript.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ---- Foundations: layer list ----
+  const layerButtons = document.querySelectorAll('#layer-list button');
+  layerButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      layerButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('layer-title').textContent = btn.dataset.title;
+      document.getElementById('layer-desc').textContent = btn.dataset.desc;
+      document.getElementById('layer-tech').textContent = btn.dataset.tech;
+    });
+  });
+
+  // ---- HTML: load semantic demo into iframe ----
+  const htmlSrc = document.getElementById('html-demo-src').textContent
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&');
+  document.getElementById('html-demo-iframe').srcdoc = htmlSrc;
+
+  // ---- CSS: flexbox playground ----
+  const stage = document.getElementById('flex-stage');
+  const codeDirection = document.getElementById('code-direction');
+  const codeJustify = document.getElementById('code-justify');
+  document.querySelectorAll('#direction-group button, #justify-group button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const prop = btn.dataset.prop;
+      const value = btn.dataset.value;
+      btn.parentElement.querySelectorAll('button').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (prop === 'direction') {
+        stage.style.flexDirection = value;
+        codeDirection.textContent = value;
+      } else {
+        stage.style.justifyContent = value;
+        codeJustify.textContent = value;
+      }
+    });
+  });
+
+  // ---- JavaScript: to-do list ----
+  const todoForm = document.getElementById('todo-form');
+  const todoInput = document.getElementById('todo-input');
+  const todoList = document.getElementById('todo-list');
+
+  todoForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const text = todoInput.value.trim();
+    if (!text) return;
+    const li = document.createElement('li');
+    li.className = 'list-group-item d-flex justify-content-between align-items-center todo-item';
+    const span = document.createElement('span');
+    span.textContent = text;
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'btn btn-sm btn-link text-danger todo-remove';
+    removeBtn.setAttribute('aria-label', 'Remove task');
+    removeBtn.innerHTML = '&times;';
+    li.appendChild(span);
+    li.appendChild(removeBtn);
+    todoList.appendChild(li);
+    todoInput.value = '';
+    todoInput.focus();
+  });
+
+  todoList.addEventListener('click', (event) => {
+    if (event.target.tagName === 'SPAN') {
+      event.target.parentElement.classList.toggle('done');
+    }
+    if (event.target.classList.contains('todo-remove')) {
+      event.target.closest('.todo-item').remove();
+    }
+  });
+</script>
+
+</body>
+</html>
